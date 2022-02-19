@@ -1,12 +1,6 @@
-/**
- * Sample React Native App
- * https://github.com/facebook/react-native
- *
- * @format
- * @flow strict-local
- */
 
-import React from 'react';
+
+import React,{useState} from 'react';
 // import {View,Text} from 'react-native';
 import {
   SafeAreaView,
@@ -16,6 +10,9 @@ import {
   Text,
   useColorScheme,
   View,
+  TextInput,
+  Image,
+  PreviewLayout
 } from 'react-native';
 
 import {
@@ -26,46 +23,49 @@ import {
   ReloadInstructions,
 } from 'react-native/Libraries/NewAppScreen';
 
-// const Section = ({children, title}): Node => {
-//   const isDarkMode = useColorScheme() === 'dark';
-//   return (
-//     <View style={styles.sectionContainer}>
-//       <Text
-//         style={[
-//           styles.sectionTitle,
-//           {
-//             color: isDarkMode ? Colors.white : Colors.black,
-//           },
-//         ]}>
-//         {title}
-//       </Text>
-//       <Text
-//         style={[
-//           styles.sectionDescription,
-//           {
-//             color: isDarkMode ? Colors.light : Colors.dark,
-//           },
-//         ]}>
-//         {children}
-//       </Text>
-//     </View>
-//   );
-// };
+import MenuItem from './components/MenuItem';
+
+
 
 const App= () => {
-  // const isDarkMode = useColorScheme() === 'dark';
 
-  // const backgroundStyle = {
-  //   backgroundColor: isDarkMode ? Colors.darker : Colors.lighter,
-  // };
 
   return (
-    <View>
-        <Text>
-          Hello
-        </Text>
-    </View>
+  <View style={styles.container}>
+    
+      <View style={styles.leftMenu}>
+        <MenuItem  name="heart"   />
+        <MenuItem  name="user"  />
+        <MenuItem  name="book"  />
+        <MenuItem  name="music"  />
+        <MenuItem  name="account-settings" type="material-community"  />
+      </View>
+      <View style={styles.main}>
+        <Text>Some mre text</Text>
+       
+      </View>
+    
+  </View>
   );
 };
+
+const styles= StyleSheet.create({
+  container:{
+    backgroundColor:'aqua',
+    display:'flex',
+    height:'100%',
+    flexDirection:'row',
+  },
+  leftMenu:{
+    width:'15%',
+    height:'100%',
+    backgroundColor:'aqua',
+  },
+  main:{
+    width:'85%',
+    height:'100%',
+    backgroundColor:'blue',
+  },
+});
 
 export default App;
