@@ -2,7 +2,8 @@ import React from 'react'
 import {SafeAreaView,ScrollView,StatusBar,StyleSheet,Text,useColorScheme,View,
     TextInput,Image,PreviewLayout} from 'react-native';
 
-function Patients() {
+
+function Settings() {
   return (
     <View>
         
@@ -10,4 +11,4 @@ function Patients() {
   )
 }
 
-export default Patients
+export default Settings
