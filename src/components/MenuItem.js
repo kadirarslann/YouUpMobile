@@ -1,25 +1,16 @@
 
-import React from 'react';
+import React, { useContext } from 'react';
 import {View,Text,Alert} from 'react-native';
 import { Icon } from 'react-native-elements';
+import Context from '../Context';
 
+const MenuItem = (props,pageIndex) =>{
+    const {user,setPageIndex}=useContext(Context)
 
-const MenuItem = (props) =>{
-
-    const goTo = () =>
-    Alert.alert(
-       'go to '+props.name,
-      "",
-      [
-        {
-          text: "Cancel",
-        //   onPress: () => console.log("Cancel Pressed"),
-          style: "cancel"
-        },
-        { text: "OK", onPress: () => console.log("OK Pressed") }
-      ]
-    );
-
+    const changePage= () =>{
+      setPageIndex(props.pageIndex)
+    }
+    
 
 
     return (
@@ -33,7 +24,7 @@ const MenuItem = (props) =>{
                   type={props.type?props.type:'font-awesome'}
                   color='#f50'
                   size={20}
-                  onPress={goTo}
+                  onPress={changePage}
                   
             />
         

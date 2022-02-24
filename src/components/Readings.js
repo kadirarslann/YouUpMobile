@@ -1,0 +1,19 @@
+import React from 'react'
+import {SafeAreaView,ScrollView,StatusBar,StyleSheet,Text,useColorScheme,View,
+  TextInput,Image,PreviewLayout} from 'react-native';
+
+function readings() {
+  return (
+    <Text style={styles.main}>
+    Readings
+    </Text>
+  )
+}
+
+const styles= StyleSheet.create({
+  main:{
+    color:'red'
+  },
+});
+
+export default readings
